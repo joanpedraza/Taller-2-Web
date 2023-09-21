@@ -29,7 +29,6 @@ form legend{
 	width:200px;
     font-family:'Courier New', Courier, monospace;
 	font-weight:bold;
-    background-color: #fff;
 }
 
 form input[type="text"],
