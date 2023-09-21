@@ -26,10 +26,10 @@ form fieldset{
 }
 
 form legend{
-	width:72px;
+	width:200px;
     font-family:'Courier New', Courier, monospace;
 	font-weight:bold;
-    background-color: transparent;
+    background-color: #fff;
 }
 
 form input[type="text"],
