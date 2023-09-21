@@ -44,6 +44,11 @@ form input[type="password"]{
 	display:inline-block;
 }
 
+form input[type="text"],
+form input[type="password"]:hover{
+	border-color: #f6f6f6;
+}
+
 form select{
     font-family:'Courier New', Courier, monospace;
     background-color:#f6f6f6;
