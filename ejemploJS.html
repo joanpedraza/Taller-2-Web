@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function example(){
+        var x = document.getElementById(id="x").value;
+        var y = document.getElementById(id="y").value;
+        var z = x+y;
+
+        document.getElementById(id="res").innerHTML = z
+        }
+
+    </script>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <p>Cambios al Dom</p>
+    <br/>
+        X
+        <input type="text" name="" id="x" maxlength="20"> 
+        <br/>
+        Y
+        <input type="text" name="" id="y" maxlength="20"> 
+        <br/>
+    <button onclick="example()">Mostrar Z</button>
+    <br/>
+    <p id="res"></p>
+</body>
+</html>
