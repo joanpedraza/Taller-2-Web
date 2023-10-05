@@ -1,0 +1,124 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="usercss.css">
+    
+    <title>Formulario punto 1</title>
+</head>
+<body onload="disable();colordisable();">
+
+    <div id="division">
+    <h3>Formulario</h3>
+
+    <form action="" method="post" id="form">
+    
+    <fieldset><legend>Datos Personales</legend>
+    Nombre <br/>
+    <input type="text" name="nombre" id="name" value="" size="30" maxlength="25" />
+    <br/>
+
+    Apellidos <br/>
+    <input type="text" name="apellidos" id="apellidos" value="" size="30" maxlength="25" />
+    <br/>
+
+    Dirección <br/>
+    <input type="text" name="direccion" id="direccion" value="" size="50" maxlength="45" />
+    <br/>
+
+    Telefono <br/>
+    <input type="text" name="telefono" id="telefono" value="" size="50" maxlength="45" />
+    <br/>
+
+    Email <br/>
+    <input type="email" name="email" id="email" value="" size="50" maxlength="120" />
+    <br/>
+
+    Pais <br/>
+    <select name="Escoger el pais" id="pais">
+        <option value="Argentina">Argentina</option> 
+        <option value="Bolivia">Bolivia</option> 
+        <option value="Chile">Chile</option> 
+        <option value="Colombia">Colombia</option> 
+        <option value="Costa Rica">Costa Rica</option> 
+        <option value="Cuba">Cuba</option> 
+        <option value="Ecuador">Ecuador</option> 
+        <option value="El Salvador">El Salvador</option> 
+        <option value="Espana">España</option> 
+        <option value="Guatemala">Guatemala</option>
+        <option value="Guinea Ecuatorial">Guinea Ecuatorial</option> 
+        <option value="Honduras">Honduras</option> 
+        <option value="Mexico">Mexico</option> 
+        <option value="Nicaragua">Nicaragua</option> 
+        <option value="Panama">Panama</option> 
+        <option value="Paraguay">Paraguay</option> 
+        <option value="Peru">Peru</option> 
+        <option value="Puerto Rico">Puerto Rico</option> 
+        <option value="Republica Dominicana">Republica Dominicana</option> 
+        <option value="Uruguay">Uruguay</option> 
+        <option value="Venezuela">Venezuela</option> 
+    </select>
+    <br/>
+
+    </fieldset>
+    <br/>
+
+    <fieldset><legend>Panel de Gustos </legend>
+    <input onclick="able();colorable();" type="radio" name="acceso" id="accesogustos">Acceder <br/>
+    <input onclick="disable();colordisable();" type="radio" name="bloqueo" id="bloqueogustos">Ocultar <br/>
+    <div class="gustos">
+        Color favorito <br/>
+        <input id="gustoscolor" type="text" name="colorfav" value="" size="50">
+        <br/>
+        Marca de carro favorita <br/>
+        <input id="gustosmarca" type="text" name="marcafav" value="" size="50">
+        <br/>
+        Estilo de carro favorita <br/>
+        <input id="gustosestilo" type="text" name="estilofav" value="" size="50">
+        <br/>
+        Modelo de carro que más le gusta <br/>
+        <input id="gustosmodelo" type="text" name="modelofav" value="" size="50">
+    </div>
+    </fieldset>
+    <br/>
+
+    <fieldset>
+        ¿Cuanto sería el valor maximo y minimo que esta dispuesto a pagar por un vehículo?
+        <div class="wrapper">
+            <div class="form_control">
+              <p id=range1> </p>
+              <p id=range2></p>
+            </div>
+            <div class="container">
+              <div class="slider-track"></div>
+              <input type="range" min="0" max="100" value="30" id="slider-1" oninput="slideOne()">
+              <input type="range" min="0" max="100" value="70" id="slider-2" oninput="slideTwo()">
+            </div>
+          </div>
+    </fieldset>
+    <br/>
+
+    <fieldset><legend>Datos de Login</legend>
+    Nombre de usuario <br/>
+    <input type="text" name="nusuario" id="nusuario" value="" size="30" maxlength="20">
+    <br/>
+
+    Contraseña <br/>
+    <input type="password" name="contrasena" id="password" value="" size="30" />
+    <br/>
+
+    Confirmar Contraseña <br/>
+    <input type="password" name="comcontrasena" id="Vpassword" value="" size="30" />
+    <br/>
+    </fieldset>
+    <br/>
+    <input type="submit"  value="Guardar cambios" />
+    <p class="warnings" id="warnings"></p>
+    </form>
+    </div>
+
+    <script src="formulario.js"> </script>
+    </body>
+   
+</html>
