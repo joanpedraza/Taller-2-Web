@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>VANILLA JAVASCRIPT HANGMAN GAME</title>
+    <meta charset="UTF-8" />
+    <link href='{% static "css/hangmanstyles.css" %}' rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h1>Hangman</h1>
+      <h2>Vanilla Javascript Hangman Game</h2>
+      <p>
+        Use the alphabet below to guess the word, or click hint to get a clue.
+      </p>
+    </div>
+
+    <div class="wrapper">
+      <div class="alphabetButton" id="alphabetButtons"></div>
+      <p id="categoryName"></p>
+      <div id="hold"></div>
+      <p id="mylives"></p>
+      <p id="clue">Clue -</p>
+      <canvas id="stickman"
+        >This Text will show if the Browser does NOT support HTML5 Canvas
+        tag</canvas
+      >
+      <form action="/menu/{{user.username}}/" method="POST">{% csrf_token %}
+      <input id="streak" name="hangmanScore" value='0'>
+      <input type='hidden' name='pongScore' id='pongScore' value=''>
+      
+      <div class="container">
+        <button type="button" class="btn-2" id="hint">Hint</button>
+        <button type="button" class="btn-2" id="reset">Play again</button>
+        <input type="submit" class="btn-2" value="Menu">
+      </div>
+      </form>
+    </div>
+    <script src='{% static "js/hangmanindex.js" %}'></script>
+  </body>
+</html>
