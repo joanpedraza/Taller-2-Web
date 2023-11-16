@@ -33,22 +33,23 @@ def tictactoe(request,nombre):
     usuario = Juegos.objects.get(username=nombre)
     return render(request, "usuarios/tictactoe.html", {"user": usuario})
 
-def snake(request):
-    template = loader.get_template("usuarios/snake.html")
-    context = {}
-    return HttpResponse(template.render(context, request))
+def snake(request,nombre):
+    usuario = Juegos.objects.get(username=nombre)
+    return render(request, "usuarios/snake.html", {"user": usuario})
 
 def menuC(request,nombre):
     if request.method == "POST":
         
         puntajeH = request.POST['hangmanScore']
         puntajeP = request.POST['pongScore']
+        puntajeX = request.POST['ticXScore']
+        puntajeO = request.POST['tic0Score']
+        puntajeS = request.POST['snakeScore']
 
         usuario = Juegos.objects.get(username=nombre)
 
         #Pong
         if puntajeP == '':
-            #return render(request, "usuarios/menu.html", {"user":usuario}) 
             puntajePn = usuario.pongScore 
         else:
             if int(puntajeP) > usuario.pongScore:
@@ -60,19 +61,40 @@ def menuC(request,nombre):
         if puntajeH == '':
             puntajeHn = usuario.hangmanScore
         else:
-            puntajeHn = int(puntajeH)
+            puntajeHn = int(puntajeH) + usuario.hangmanScore
+            
+        #TictacToe
+        if puntajeX == '':
+            puntajeX = usuario.tictacX
+        else:
+            puntajeX = int(puntajeX) + usuario.tictacX
+            
+        if puntajeO == '':
+            puntajeO = usuario.tictac0
+        else:
+            puntajeO = int(puntajeO) + usuario.tictac0   
+            
+        #Snake     
+        if puntajeS == '':
+            puntajeS = usuario.snakeScore
+        else:
+            if int(puntajeS) > usuario.snakeScore:
+                puntajeS = int(puntajeS)
+            else:
+                puntajeS = usuario.snakeScore    
               
         #usuario.username = nombre
-        #usuario.snakeScore = 0
-        #usuario.tictacX = 0
-        #usuario.tictac0 = 0
+        usuario.snakeScore = puntajeS
+        usuario.tictacX = puntajeX
+        usuario.tictac0 = puntajeO
         usuario.pongScore = puntajePn
         usuario.hangmanScore = puntajeHn
 
         usuario.save()
+        
         return render(request, "usuarios/menu.html", {"user":usuario})    
     else:
-        return render(request, "usuarios/pong.html")
+        return render(request, "usuarios/menu.html")
 
 
 def backMenu(request):

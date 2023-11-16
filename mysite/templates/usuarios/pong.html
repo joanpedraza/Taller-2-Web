@@ -16,7 +16,11 @@
     </div>
     <form action="/menu/{{user.username}}/" method="POST">{% csrf_token %}
     <input type='hidden' name='pongScore' id='pongScore' value=''>
-    <input type="hidden" id="streak" name="hangmanScore" value='1'>
+    <input type="hidden" id="hangmanScore" name="hangmanScore" value=''>
+    <input type="hidden" name='ticXScore' id="marcador-X" value=''>
+    <input type="hidden" name='tic0Score' id="marcador-O" value=''>
+    <input type="hidden" id="snakeScore" name="snakeScore" value="">
+
     <input type="submit" class="game-link" value="Menu">
     </form>
     <script src='{% static "js/pong.js" %}'></script> 

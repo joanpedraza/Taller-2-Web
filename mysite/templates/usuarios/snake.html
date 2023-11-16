@@ -9,16 +9,23 @@
 
 <body class=" justify-content-center align-items-center vh-100">
     <div class='wrapper'>
+        <form action="/menu/{{user.username}}/" method="POST">{% csrf_token %}
         <h1>Snake</h1>
         <p>Utilize las flechas del teclado para controlar a la serpiente</p>
-        <div><img src='{% static "img/apple.png" %}'> <span id="apples">0</span></div>
+        <div><img src='{% static "css/apple.png" %}'> <span id="apples">0</span></div>
+        <input type="hidden" id="snakeScore" name="snakeScore" value="">
+        <input type="hidden" name='ticXScore' id="marcador-X" value=''>
+        <input type="hidden" name='tic0Score' id="marcador-O" value=''>
+        <input type='hidden' name='pongScore' id='pongScore' value=''>
+        <input type='hidden' id="hangmanScore" name="hangmanScore" value=''>
+
         <div id="board"><span></span></div>
         <div id="buttons">
             <input type="button" value="start" id="start"><input type="button" value="pause" id="pause" disabled>
         </div>
 
-        <a href="{% url 'menu'%}" class="game-link" >Menú</a>
-
+        <input type="submit" class="game-link" value="Menu">
+        </form>
     </div>
 
 

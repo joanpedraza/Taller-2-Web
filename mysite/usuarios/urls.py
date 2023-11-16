@@ -11,7 +11,7 @@ urlpatterns = [
     path('hangman/<str:nombre>/', views.hangman, name="hangman"),
     path('pong/<str:nombre>/', views.pong),
     path('tictactoe/<str:nombre>/', views.tictactoe, name="tictactoe"),
-    path('menu/snake/', views.snake, name="snake"),
+    path('snake/<str:nombre>/', views.snake, name="snake"),
     path('menu/<str:nombre>/', views.menuC),
 
     path('menu/', views.backMenu, name="menu"),

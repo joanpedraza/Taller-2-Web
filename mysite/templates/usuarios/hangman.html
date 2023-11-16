@@ -27,8 +27,11 @@
         tag</canvas
       >
       <form action="/menu/{{user.username}}/" method="POST">{% csrf_token %}
-      <input id="streak" name="hangmanScore" value='0'>
+      <input type="hidden" id="hangmanScore" name="hangmanScore" value=''>
       <input type='hidden' name='pongScore' id='pongScore' value=''>
+      <input type="hidden" name='ticXScore' id="marcador-X" value=''>
+      <input type="hidden" name='tic0Score' id="marcador-O" value=''>
+      <input type="hidden" id="snakeScore" name="snakeScore" value="">
       
       <div class="container">
         <button type="button" class="btn-2" id="hint">Hint</button>

@@ -73,6 +73,9 @@
             }
             let apples=document.getElementById("apples");
             apples.innerText=parseInt(apples.innerText)+1;
+
+            let manzana = document.getElementById("snakeScore")
+            manzana.value = apples.innerText
             return;
         }
 

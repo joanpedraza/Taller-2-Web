@@ -13,6 +13,9 @@ const livesDisplay = document.getElementById("mylives");
 var myStickman = document.getElementById("stickman");
 var context = myStickman.getContext("2d");
 
+var scoreBoard1 = document.getElementById("hangmanScore");
+let contador = 0;
+
 //generate alphabet button
 function generateButton() {
   var buttonsHTML = "abcdefghijklmnopqrstuvwxyz"
@@ -156,8 +159,7 @@ function guess(event) {
   if (answer === winningCheck) {
     livesDisplay.innerHTML = `YOU WIN!`;
 
-    var scoreBoard1 = document.getElementById("streak");
-    contador = parseInt(scoreBoard1.value)+1;
+    contador += 1;
     scoreBoard1.value = contador;
 
     return;
@@ -195,6 +197,10 @@ function guess(event) {
     //console.log(life);
     if (answer === winningCheck) {
       livesDisplay.innerHTML = `YOU WIN!`;
+
+      contador += 1;
+      scoreBoard1.value = contador;
+
       return;
     }
   }
